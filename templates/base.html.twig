@@ -9,9 +9,17 @@
 			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
-																																																																		           and uncomment the following Encore helpers to start using Symfony UX #}
+																																																																								           and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
-			{#{{ encore_entry_link_tags('app') }}#}
+			<style type="text/css">
+				.jumbotron {
+					padding: 4rem 2rem;
+					margin-bottom: 2rem;
+					background-color: var(--bs-light);
+					border-radius: 0.3rem;
+				}
+			</style>
+
 		{% endblock %}
 
 		{% block javascripts %}
