@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\SearchRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -28,6 +29,16 @@ class Search
      * @Assert\Range(min=10, max=400)
      */
     private $minPiece;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $options;
+
+    public function __construct()
+    {
+        $this->options = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -56,5 +67,22 @@ class Search
         $this->minPiece = $minPiece;
 
         return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    /**
+     * @param ArrayCollection $options
+     * @return void
+     */
+    public function setOptions(ArrayCollection $options)
+    {
+        $this->options = $options;
     }
 }

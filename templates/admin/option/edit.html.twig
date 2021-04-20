@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h1>
+			{% if edit_mode %}
+				Editer l'option
+			{% else %}
+				Créer une nouvelle option
+			{% endif %}
+
+		</h1>
+		{{ form_start(form)}}
+		{{ form_rest(form) }}
+		<button type="submit" class="btn btn-primary mt-4">
+			{% if edit_mode %}
+				Editer
+			{% else %}
+				créer
+			{% endif %}
+
+		</button>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
