@@ -57,6 +57,7 @@ class AdminPropertyController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $this->manager->persist($property);
             $this->manager->flush();
             $this->addFlash('success', 'opération éffectuée avec succes');
